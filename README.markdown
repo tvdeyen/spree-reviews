@@ -1,43 +1,21 @@
 Reviews
 =======
 
-Straightforward review/rating facility
-
-Please see TODO file
+Updated and refactored Rails 3 Gem of the old [spree-reviews plugin](https://github.com/paulcc/spree-reviews) from [Paul Callaghan](http://www.free-variable.org/).
 
 
 Usage
 -----
 
-Action "submit" in "reviews" controller - goes to review entry form
+1. Add into your Gemfile:
 
-Users must be logged in to submit a review
+  gem 'spree-reviews', :git => 'git://github.com/tvdeyen/spree-reviews.git'
 
-Three partials:
- - ./app/views/products/_rating.html.erb  -- display number of stars
- - ./app/views/products/_shortrating.html.erb -- shorter version of above
- - ./app/views/products/_review.html.erb  -- display a single review
+2. Run the installation rake task:
 
-Administrator can edit and/or approve and/or delete reviews.
+  bundle exec rake spree_reviews:install
+  
+3. And run the migration:
 
+  bundle exec rake db:migrate
 
-Implementation
---------------
-
-reviews table is quite obvious - and note the "approved" flag which is for the
-administrator to update
-
-ratings table holds current fractional value - avoids frequent recalc...
-
-
-Discussion
-----------
-
-Some points which might need modification in future:
- - I don't track the actual user on a review (just their "screen name" at the 
-   time), but we may want to use this information to avoid duplicate reviews
-   etc.
-
- - Rating votes are tied to a review, to avoid spam. However: ratings are 
-   accepted whether or not the review is accepted. Perhaps they should only 
-   be counted when the review is approved.

@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description  = 'Adds reviews and ratings to Spree products'
   s.required_ruby_version = '>= 1.8.7'
   
-  s.authors      = ['sebastyuiop', 'Thomas von Deyen']
+  s.authors      = ['Thomas von Deyen', 'Paul Callaghan']
   
   s.files        = `git ls-files`.split("\n")
   s.test_files   = `git ls-files -- {test,spec,features}/*`.split("\n")

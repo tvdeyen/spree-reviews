@@ -8,4 +8,3 @@ module Spree::Reviews
     end
   end
 end
-

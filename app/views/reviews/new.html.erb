@@ -3,60 +3,66 @@
 <% end %>
 <h1>Product review submission</h1>
 
-<h2> <%= t('leave_us_a_review') + ' "' + @product.name + '"' %> </h2>
+<h2><%= t('leave_us_a_review') + ' "' + @product.name + '"' %></h2>
 
-<% form_for @review, :url => {:action => 'create'} do |f| %>
-  <%= error_messages_for :review %>
-  <%= f.hidden_field :product_id, :value => @product.id %>     
-
-    <table cellspacing="0" cellpadding="2">
-	<tbody><tr valign="top">
-	    <td class="fieldtitle right nowrap">
-		<%= f.label :name, "<strong>Your name</strong>" %>
-	    </td>
-	    <td width="100%">
-              <%= f.text_field :name, :size => 50, :maxlength => 100 %>
-	    </td>
-	</tr>
-	<tr valign="top">
-	    <td class="fieldtitle right nowrap">
-		<%= f.label :location, "<strong>Your location</strong>" %>
-	    </td>
-	    <td>
-              <%= f.text_field :location, :size => 50, :maxlength => 100 %>
-	    </td>
-	</tr>
-	<tr valign="top">
-	    <td style="padding-top: 5px; padding-bottom: 5px;" class="fieldtitle right nowrap">
-		<strong>Rating</strong>
-	    </td>
-	    <td style="padding-top: 5px; padding-bottom: 5px;">
-              <%= render :partial => "reviews/stars", :locals => {:stars => @review.rating, :edit_enabled => true} %>
-	    </td>
-	</tr>
-	<tr valign="top">
-	    <td class="fieldtitle right nowrap">
-		<%= f.label :title, "<strong>Review title</strong>" %>
-	    </td>
-	    <td>
-            <%= f.text_field :title, :maxlength => "255", :size => "50" %>
-	    </td>
-	</tr>
-	<tr valign="top">
-	    <td class="fieldtitle right nowrap">
-		<%= f.label :review, "<strong>Review text</strong>" %>
-	    </td>
-	    <td>
-		<%= f.text_area :review, :wrap => "virtual", :rows => "10", :cols => "50" %>
-	    </td>
-	</tr>
-	<tr>
-	    <td> </td>
-	    <td style="padding-top: 5px;">
-		<%= f.submit "Submit your review", :class => "button bg_darkfirst" %>
-	    </td>
-	</tr>
-    </tbody></table>
+<%= form_for @review, :url => {:action => 'create'} do |f| %>
+  <%= render "shared/error_messages", :target => @review %>
+  <%= f.hidden_field :product_id, :value => @product.id %>
+  
+  <table cellspacing="0" cellpadding="2">
+    <tbody>
+      <tr valign="top">
+        <td class="fieldtitle right nowrap">
+          <%= f.label :name %><span class="mandatory">*</span>
+        </td>
+        <td width="100%">
+          <%= f.text_field :name, :size => 50, :maxlength => 100 %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td class="fieldtitle right nowrap">
+          <%= f.label :location %><span class="mandatory">*</span>
+        </td>
+        <td>
+          <%= f.text_field :location, :size => 50, :maxlength => 100 %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td style="padding-top: 5px; padding-bottom: 5px;" class="fieldtitle right nowrap">
+          <label>Rating</label>
+        </td>
+        <td style="padding-top: 5px; padding-bottom: 5px;">
+          <%= render :partial => "reviews/stars", :locals => {:stars => @review.rating, :edit_enabled => true} %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td class="fieldtitle right nowrap">
+          <%= f.label :title %><span class="mandatory">*</span>
+        </td>
+        <td>
+          <%= f.text_field :title, :maxlength => "255", :size => "50" %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td class="fieldtitle right nowrap">
+          <%= f.label :review %><span class="mandatory">*</span>
+        </td>
+        <td>
+          <%= f.text_area :review, :wrap => "virtual", :rows => "10", :cols => "50" %>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td style="padding-top: 5px;">
+          <%= f.submit "Submit your review", :class => "button bg_darkfirst" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="mandatory_notice">
+    <span class="mandatory">*</span>
+    <%= t('mandatory_notice', :default => 'Mandatory fields') %>
+  </p>
 <% end %>
 
 <%= render :partial => "fine_print" %>

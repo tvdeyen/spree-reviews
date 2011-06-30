@@ -1,0 +1,46 @@
+de:
+  write_your_own_review: Schreiben Sie Ihre eigene Bewertung
+  review_management: Bewertungen
+  review_management_description: Verwaltung der Benutzerbewertungen
+  back_reviews: Zurück zu den Bewertungen
+  are_you_sure_review: Wollen Sie diese Bewertung wirklich löschen?
+  info_approve_review: Bewertung freigegeben
+  error_approve_review: Beim Freigeben ist ein Fehler aufgetreten
+  approve: Freigeben
+  leave_us_a_review: Eine Bewertung hinterlassen für
+  review_successfully_sumbitted: Ihre Bewertung wurde erfolgreich eingereicht
+  rating: Punkte
+  submit_your_review: Ihre Bewertung einreichen
+  review_content: Inhalt
+  review_title: Titel
+  average_customer_rating: Durchschnittliche Kundenbewertung
+  new_review_heading: 'Eine Bewertung hinterlassen'
+  reviews:
+    review_settings: Bewertungs-Einstellungen
+    manage_review_settings: Anzeige Einstellungen
+    preview_size: Länge der Kurzform
+    include_unapproved: Nicht freigegebene Bewertungen mit auflisten
+    rating_title: '%{stars} von 5'
+    based_upon: 'basierend auf %{review_count}'
+    rating_titles:
+      bad: 'sehr schlecht'
+      poor: 'schlecht'
+      regular: 'durchschnittlich'
+      good: 'gut'
+      gorgeous: 'sehr gut'
+      
+  activerecord:
+    models:
+      review:
+        one: Bewertung
+        other: Bewertungen
+      rating:
+        one: Punkt
+        other: Punkte
+    attributes:
+      review:
+        name: Name
+        location: Standort
+        title: Titel
+        review: Bewertung
+        rating: Punkte

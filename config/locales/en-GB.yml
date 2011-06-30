@@ -13,8 +13,34 @@ en-GB:
   submit_your_review: Submit your review
   review_content: Content
   review_title: Title
+  average_customer_rating: Average customer rating
+  new_review_heading: 'Product review submission'
   reviews:
     review_settings: Review Settings
     manage_review_settings: Control the display of reviews
     preview_size: Size of the review snippets
     include_unapproved: Include unapproved reviews in listings
+    rating_title: '%{stars} out of 5'
+    based_upon: 'based upon %{review_count}'
+    rating_titles:
+      bad: 'bad'
+      poor: 'poor'
+      regular: 'regular'
+      good: 'good'
+      gorgeous: 'gorgeous'
+
+  activerecord:
+    models:
+      review:
+        one: Review
+        other: Reviews
+      rating:
+        one: Rating
+        other: Ratings
+    attributes:
+      review:
+        name: Name
+        location: Location
+        title: Title
+        review: Review
+        rating: Rating

@@ -9,16 +9,15 @@ class ReviewsController < Spree::BaseController
   
   def new
     @product = Product.find_by_permalink params[:product_id]
-    @review = Review.new :product => @product
+    @review = @product.reviews.new
   end
   
   def create
-    @product = Product.find_by_permalink params[:product_id]
-    params[:review][:rating].sub!(/\s*stars/,'') unless params[:review][:rating].blank?
-    @review = Review.new :product => @product
-    if @review.update_attributes(params[:review]) 
-      flash[:notice] = 'Review was successfully submitted.'
-      redirect_to (product_path(@product))
+    @product = Product.find_by_permalink(params[:product_id])
+    @review = @product.reviews.new(params[:review])
+    if @review.save
+      flash[:notice] = t('review_successfully_sumbitted', :default => 'Review was successfully submitted.')
+      redirect_to product_path(@product)
     else
       render :action => "new"
     end

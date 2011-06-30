@@ -1,5 +1,5 @@
 <div class="review">
-  <span title="<%= t('reviews.rating_title', :default => '%{stars} out of 5') % {:stars => review.rating} -%>">
+  <span title="<%= t('reviews_rating_title', :default => '%{stars} out of 5') % {:stars => review.rating} -%>">
     <%= render :partial => "reviews/stars", :locals => {:stars => review.rating} %>
   </span>
   &nbsp; <span class="title"><%=h review.title -%></span>

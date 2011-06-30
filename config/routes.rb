@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   
   namespace :admin do
-    resources :reviews
+    resources :reviews do
+      member do
+        put 'approve'
+      end
+    end
     resource :review_settings
   end
   
   resources :products do
-    resources :reviews # , :member => {:submit => :post}
+    resources :reviews
   end
   
 end

@@ -7,7 +7,7 @@
         start: #{defined?(stars) && !stars.nil? ? stars : 'null'},
         path: '/images/',
         readOnly: #{defined?(edit_enabled) ? 'false' : 'true'},
-        hintList: ['#{t('reviews.rating_titles.bad', :default => 'bad')}', '#{t('reviews.rating_titles.poor', :default => 'poor')}', '#{t('reviews.rating_titles.regular', :default => 'regular')}', '#{t('reviews.rating_titles.good', :default => 'good')}', '#{t('reviews.rating_titles.gorgeous', :default => 'gorgeous')}'],
+        hintList: ['#{t('reviews_rating_titles.bad', :default => 'bad')}', '#{t('reviews_rating_titles.poor', :default => 'poor')}', '#{t('reviews_rating_titles.regular', :default => 'regular')}', '#{t('reviews_rating_titles.good', :default => 'good')}', '#{t('reviews_rating_titles.gorgeous', :default => 'gorgeous')}'],
         click: function(score, evt) {
           $('#product_review_rating').val(score);
         }

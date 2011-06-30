@@ -1,8 +1,8 @@
 <%- stars = product.get_stars -%>
 <div class="header clear">
   <%= t('average_customer_rating', :default => 'Average customer rating') %>:
-  (<%= t('reviews.based_upon', :default => 'based upon %{review_count}') % {:review_count => stars[1]} -%> <%= Review.model_name.human(:count => stars[1]) -%>)
-  <span title="<%= t('reviews.rating_title', :default => '%{stars} out of 5') % {:stars => stars[0]} -%>">
+  (<%= t('reviews_based_upon', :default => 'based upon %{review_count}') % {:review_count => stars[1]} -%> <%= Review.model_name.human(:count => stars[1]) -%>)
+  <span title="<%= t('reviews_rating_title', :default => '%{stars} out of 5') % {:stars => stars[0]} -%>">
     <%= render :partial => "reviews/stars", :locals => {:stars => stars[0]} %>
   </span> &nbsp;
   <br/>

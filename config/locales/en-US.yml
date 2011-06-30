@@ -1,4 +1,5 @@
-en-US:
+en-GB:
+  reviews: Reviews
   write_your_own_review: Write your own review
   review_management: Review Management
   review_management_description: Manage the user-submitted reviews
@@ -15,19 +16,22 @@ en-US:
   review_title: Title
   average_customer_rating: Average customer rating
   new_review_heading: 'Product review submission'
-  reviews:
-    review_settings: Review Settings
-    manage_review_settings: Control the display of reviews
-    preview_size: Size of the review snippets
-    include_unapproved: Include unapproved reviews in listings
-    rating_title: '%{stars} out of 5'
-    based_upon: 'based upon %{review_count}'
-    rating_titles:
-      bad: 'bad'
-      poor: 'poor'
-      regular: 'regular'
-      good: 'good'
-      gorgeous: 'gorgeous'
+  review_settings: Review Settings
+  manage_review_settings: Control the display of reviews
+  reviews_preview_size: Size of the review snippets
+  reviews_include_unapproved: Include unapproved reviews in listings
+  reviews_rating_title: '%{stars} out of 5'
+  reviews_based_upon: 'based upon %{review_count}'
+  reviews_from: from
+  reviews_for: for
+  approved_reviews: Approved
+  unapproved_reviews: Unapproved
+  reviews_rating_titles:
+    bad: 'bad'
+    poor: 'poor'
+    regular: 'regular'
+    good: 'good'
+    gorgeous: 'gorgeous'
   
   review_attribution: 'By <strong>%{name}</strong> from <strong>%{location}</strong> on <strong>%{date}</strong>'
   

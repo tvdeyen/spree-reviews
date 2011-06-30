@@ -11,8 +11,8 @@ class SpreeReviewsHooks < Spree::ThemeSupport::HookListener
     :insert_after => "[data-hook='admin_configurations_menu']",
     :text => %(
       <tr>
-        <td><%= link_to t('reviews.review_settings', :default => 'Review Settings'), admin_review_settings_path %></td>
-        <td><%= t('reviews.manage_review_settings', :default => 'Manage Review Settings') %></td>
+        <td><%= link_to t('reviews_review_settings', :default => 'Review Settings'), admin_review_settings_path %></td>
+        <td><%= t('reviews_manage_review_settings', :default => 'Manage Review Settings') %></td>
       </tr>
     )
   )
@@ -22,7 +22,7 @@ class SpreeReviewsHooks < Spree::ThemeSupport::HookListener
     :insert_bottom => "[data-hook='admin_configurations_sidebar_menu']",
     :text => %(
       <li<%== ' class="active"' if controller.controller_name == 'review_settings' %>>
-        <%= link_to t("reviews.review_settings", :default => 'Review Settings'), admin_review_settings_path %>
+        <%= link_to t("reviews_review_settings", :default => 'Review Settings'), admin_review_settings_path %>
       </li>
     )
   )

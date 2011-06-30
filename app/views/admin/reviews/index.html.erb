@@ -1,42 +1,44 @@
 <h1><%= t('review_management_description') %></h1>
 
-<% for reviews in [["Unapproved", @unapproved_reviews], ["Approved", @approved_reviews]] %>
-  <h2> <%= reviews[0] %> reviews </h2>
-
-  <table cellspacing=6>
-    <tr>
-      <th>Date</th>
-      <th><%= t('user') %></th>
-      <th><%= t('review_title') %> / <%= t('product') %></th>
-      <th><%= t('review_content') %></th>
-    </tr>
+<%- for reviews in [[t("approved_reviews"), @unapproved_reviews], [t("unapproved_reviews"), @approved_reviews]] -%>
+  <h2><%= reviews[0] %> <%= Review.model_name.human(:count => reviews[0]) %></h2>
   
-    <% for review in reviews[1] %>
-    <tr>
-      <td> 
-        <%= review.created_at.strftime("%d-%m-%y (%H:%M)") %>
-      </td>
-      <td> 
-        <%= h review.name %> from <%= h review.location %>
-      </td>
-      <td>
-        <%= h review.title %>
-        <br/>
-        for <%= link_to review.product.name, product_path(review.product) %>
-      </td>
-      <td style="border: 1px dashed green" width="60%">
-        <br/>
-        <%= h review.review %>
-      </td>
-      <td>
-        <% unless review.approved %>
-          <%= link_to t('approve'), {:action => 'approve', :id => review} %> |
-        <% end %>
+  <table class="index">
+    <thead>
+      <tr>
+        <th><%= Review.human_attribute_name(:created_at) %></th>
+        <th><%= Review.human_attribute_name(:user) %></th>
+        <th><%= Review.human_attribute_name(:title) %> / <%= Review.human_attribute_name(:product) %></th>
+        <th><%= Review.human_attribute_name(:review) %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%- for review in reviews[1] -%>
+      <tr>
+        <td> 
+          <%= l(review.created_at, :format => :short) %>
+        </td>
+        <td> 
+          <%= h review.name %> <%= t('reviews_from', :default => 'from') %> <%= h review.location %>
+        </td>
+        <td>
+          <%= h review.title %>
+          <br/>
+          <%= t('reviews_for', :default => 'for') %> <%= link_to review.product.name, product_path(review.product) %>
+        </td>
+        <td width="60%">
+          <%= h review.review %>
+        </td>
+        <td>
+          <%- unless review.approved -%>
+          <%= link_to t('approve'), [:approve, :admin, review], :method => :put %> |
+          <%- end -%>
           <%= link_to t('edit'), [:edit, :admin, review] %> |
           <%= link_to t('destroy'), [:admin, review], :method => :delete, :confirm => t('are_you_sure_review') %>
-      </td>
-    </tr>
-  <% end %>
+        </td>
+      </tr>
+      <%- end -%>
+    </tbody>
   </table>
-  <br/> 
-<% end %> 
+<%- end -%> 

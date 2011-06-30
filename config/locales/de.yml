@@ -1,4 +1,5 @@
 de:
+  reviews: Bewertungen
   write_your_own_review: Schreiben Sie Ihre eigene Bewertung
   review_management: Bewertungen
   review_management_description: Verwaltung der Benutzerbewertungen
@@ -15,19 +16,22 @@ de:
   review_title: Titel
   average_customer_rating: Durchschnittliche Kundenbewertung
   new_review_heading: 'Eine Bewertung hinterlassen'
-  reviews:
-    review_settings: Bewertungs-Einstellungen
-    manage_review_settings: Anzeige Einstellungen
-    preview_size: Länge der Kurzform
-    include_unapproved: Nicht freigegebene Bewertungen mit auflisten
-    rating_title: '%{stars} von 5'
-    based_upon: 'basierend auf %{review_count}'
-    rating_titles:
-      bad: 'sehr schlecht'
-      poor: 'schlecht'
-      regular: 'durchschnittlich'
-      good: 'gut'
-      gorgeous: 'sehr gut'
+  review_settings: Bewertungs-Einstellungen
+  manage_review_settings: Anzeige Einstellungen
+  reviews_preview_size: Länge der Kurzform
+  reviews_include_unapproved: Nicht freigegebene Bewertungen mit auflisten
+  reviews_rating_title: '%{stars} von 5'
+  reviews_based_upon: 'basierend auf %{review_count}'
+  reviews_from: aus
+  reviews_for: zu
+  approved_reviews: Freigegebene
+  unapproved_reviews: Nicht freigegebene
+  reviews_rating_titles:
+    bad: 'sehr schlecht'
+    poor: 'schlecht'
+    regular: 'durchschnittlich'
+    good: 'gut'
+    gorgeous: 'sehr gut'
   
   review_attribution: 'Von <strong>%{name}</strong> aus <strong>%{location}</strong> am <strong>%{date}</strong>'
   
@@ -46,3 +50,6 @@ de:
         title: Titel
         review: Bewertung
         rating: Punkte
+        created_at: Datum
+        user: Benutzer
+        product: Produkt

@@ -1,7 +1,7 @@
 module ReviewsHelper
   
   def star(the_class) 
-    "<span class=\"#{the_class}\"> &#10030; </span>"
+    "<span class=\"#{the_class}\"> &nbsp; </span>"
   end
   
   def mk_stars(m)

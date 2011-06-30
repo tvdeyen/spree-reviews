@@ -1,3 +1,4 @@
+<%- if defined?(edit_enabled) && edit_enabled -%>
 <%- content_for :head do -%>
   <%= javascript_include_tag("jquery.raty.js") %>
   <%= javascript_tag(%(
@@ -17,3 +18,9 @@
 
 <div id="rating_stars"></div>
 <input name="review[rating]" type="hidden" value="<%= defined?(stars) && !stars.nil? ? stars : 0 %>" id="product_review_rating" />
+
+<%- else -%>
+
+<%= render :partial => "reviews/stars#{stars}" %>
+
+<%- end -%>

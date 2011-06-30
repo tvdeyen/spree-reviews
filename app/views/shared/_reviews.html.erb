@@ -1,6 +1,6 @@
-<% content_for :head do %>
+<%- content_for :head do -%>
   <%= stylesheet_link_tag 'reviews.css' %>
-<% end %>
+<%- end -%>
 
 <div id="reviews">
   <%= render :partial => 'shared/rating', :locals => {:product => @product, :review => 0} %>

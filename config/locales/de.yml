@@ -28,7 +28,9 @@ de:
       regular: 'durchschnittlich'
       good: 'gut'
       gorgeous: 'sehr gut'
-      
+  
+  review_attribution: 'Von <strong>%{name}</strong> aus <strong>%{location}</strong> am <strong>%{date}</strong>'
+  
   activerecord:
     models:
       review:

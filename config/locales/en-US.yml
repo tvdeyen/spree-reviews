@@ -28,7 +28,9 @@ en-US:
       regular: 'regular'
       good: 'good'
       gorgeous: 'gorgeous'
-      
+  
+  review_attribution: 'By <strong>%{name}</strong> from <strong>%{location}</strong> on <strong>%{date}</strong>'
+  
   activerecord:
     models:
       review:

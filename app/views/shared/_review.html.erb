@@ -1,11 +1,11 @@
 <div class="review">
-  <span title="<%=pluralize(review.rating, 'star')%> out of 5">
+  <span title="<%= t('reviews.rating_title', :default => '%{stars} out of 5') % {:stars => review.rating} -%>">
     <%= render :partial => "reviews/stars", :locals => {:stars => review.rating} %>
   </span>
-  &nbsp; <span class="title"><%=h review.title%> </span>
+  &nbsp; <span class="title"><%=h review.title -%></span>
   <br/>
-  <span class="attribution">By <strong><%=h review.name%></strong> from <strong><%=h review.location%></strong> on <strong><%=review.created_at.strftime("%d/%m/%Y") %></strong></span>
+  <span class="attribution"><%= raw t('review_attribution', :default => 'By <strong>%{name}</strong> from <strong>%{location}</strong> on <strong>%{date}</strong>') % {:name => h(review.name), :location => h(review.location), :date => l(review.created_at.to_date)} %></span>
   <p>
-  <%=h review.review%>
+    <%=h review.review %>
   </p>
 </div>

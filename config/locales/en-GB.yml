@@ -26,6 +26,9 @@ en-GB:
   reviews_for: for
   approved_reviews: Approved
   unapproved_reviews: Unapproved
+  reviews_editing_review_for: 'Editing review for'
+  reviews_original_version: 'Original version'
+  reviews_edited_version: 'Edited version'
   reviews_rating_titles:
     bad: 'bad'
     poor: 'poor'

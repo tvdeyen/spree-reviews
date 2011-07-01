@@ -1,17 +1,20 @@
-<%= error_messages_for :review %>
-<br />
-
-<p>
-  <%= form.text_field :name, :size => 30 %>
-</p>
-<p>
-  <%= form.text_field :location, :size => 50 %>
-</p>
-<p>
-  <%= form.text_area :review, :cols => 60, :rows => 10 %>
-</p>
-<br/>
-<p>
-  <%= form.submit button_name %>
-</p>
-
+<%= form_for([:admin, @review]) do |form| %>
+  
+  <%= render "shared/error_messages", :target => @review %>
+  <p>
+    <%= form.label :name %><br />
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :location %><br />
+    <%= form.text_field :location %>
+  </p>
+  <p>
+    <%= form.label :review %><br />
+    <%= form.text_area :review %>
+  </p>
+  <p>
+    <%= form.submit t('update') %>
+  </p>
+  
+<% end %>

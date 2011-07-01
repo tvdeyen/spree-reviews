@@ -1,17 +1,14 @@
-<h1>Editing review for <%= link_to @review.product.name, product_path(@review.product) %></h1>
+<h1><%= t('reviews_editing_review_for', :default => 'Editing review for') %> <%= link_to @review.product.name, product_path(@review.product) %></h1>
 
-<h2>Original version</h2>
+<h2><%= t('reviews_original_version', :default => 'Original version') %></h2>
 
 <p>
 <%= @review.review %>
 </p>
 <br/>
 
-<h2>Edited version</h2>
+<h2><%= t('reviews_edited_version', :default => 'Edited version') %></h2>
 
-<% form_for([:admin, @review]) do |f| %>
-  <%= render :partial => f,
-             :locals  => { :button_name => "Update" } %>
-<% end %>
+<%= render :partial => 'form' %>
 
 <%= link_to t('back_reviews'), admin_reviews_path %>

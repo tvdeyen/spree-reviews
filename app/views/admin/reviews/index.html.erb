@@ -6,11 +6,11 @@
   <table class="index">
     <thead>
       <tr>
-        <th><%= Review.human_attribute_name(:created_at) %></th>
-        <th><%= Review.human_attribute_name(:user) %></th>
+        <th style="width: 80px"><%= Review.human_attribute_name(:created_at) %></th>
+        <th style="width: 100px"><%= Review.human_attribute_name(:user) %></th>
         <th><%= Review.human_attribute_name(:title) %> / <%= Review.human_attribute_name(:product) %></th>
         <th><%= Review.human_attribute_name(:review) %></th>
-        <th></th>
+        <th style="width: 230px"></th>
       </tr>
     </thead>
     <tbody>
@@ -20,22 +20,22 @@
           <%= l(review.created_at, :format => :short) %>
         </td>
         <td> 
-          <%= h review.name %> <%= t('reviews_from', :default => 'from') %> <%= h review.location %>
+          <%= h review.name %> <%= t('reviews_from', :default => 'from') %><br />
+          <%= h review.location %>
         </td>
         <td>
-          <%= h review.title %>
-          <br/>
+          <%= h review.title %><br/>
           <%= t('reviews_for', :default => 'for') %> <%= link_to review.product.name, product_path(review.product) %>
         </td>
-        <td width="60%">
-          <%= h review.review %>
+        <td>
+          <%= truncate h(review.review), :length => 100 %>
         </td>
         <td>
           <%- unless review.approved -%>
-          <%= link_to t('approve'), [:approve, :admin, review], :method => :put %> |
+          <%= link_to image_tag('/admin/images/icons/accept.png') + t('approve'), [:approve, :admin, review], :method => :put, :class => 'icon_link' %>
           <%- end -%>
-          <%= link_to t('edit'), [:edit, :admin, review] %> |
-          <%= link_to t('destroy'), [:admin, review], :method => :delete, :confirm => t('are_you_sure_review') %>
+          <%= link_to_edit review %>
+          <%= link_to_delete review %>
         </td>
       </tr>
       <%- end -%>

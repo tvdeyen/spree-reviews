@@ -26,6 +26,9 @@ de:
   reviews_for: zu
   approved_reviews: Freigegebene
   unapproved_reviews: Nicht freigegebene
+  reviews_editing_review_for: 'Bearbeite die Bewertung für'
+  reviews_original_version: 'Originalversion'
+  reviews_edited_version: 'Bearbeitete Version'
   reviews_rating_titles:
     bad: 'sehr schlecht'
     poor: 'schlecht'

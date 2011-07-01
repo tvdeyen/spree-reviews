@@ -2,12 +2,14 @@ class SpreeReviewsHooks < Spree::ThemeSupport::HookListener
   
   Deface::Override.new(
     :virtual_path => "layouts/admin",
+    :name => 'reviews_admin_tab',
     :insert_bottom => "[data-hook='admin_tabs']",
     :text => %(<%= tab(:reviews) %>)
   )
   
   Deface::Override.new(
     :virtual_path => "admin/configurations/index",
+    :name => 'reviews_settings',
     :insert_after => "[data-hook='admin_configurations_menu']",
     :text => %(
       <tr>
@@ -19,6 +21,7 @@ class SpreeReviewsHooks < Spree::ThemeSupport::HookListener
   
   Deface::Override.new(
     :virtual_path => "admin/shared/_configuration_menu",
+    :name => 'reviews_settings_sidebar',
     :insert_bottom => "[data-hook='admin_configurations_sidebar_menu']",
     :text => %(
       <li<%== ' class="active"' if controller.controller_name == 'review_settings' %>>

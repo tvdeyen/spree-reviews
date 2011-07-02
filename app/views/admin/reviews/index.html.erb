@@ -1,6 +1,6 @@
 <h1><%= t('review_management_description') %></h1>
 
-<%- for reviews in [[t("approved_reviews"), @unapproved_reviews], [t("unapproved_reviews"), @approved_reviews]] -%>
+<%- for reviews in [[t("unapproved_reviews"), @unapproved_reviews], [t("approved_reviews"), @approved_reviews]] -%>
   <h2><%= reviews[0] %> <%= Review.model_name.human(:count => reviews[0]) %></h2>
   
   <table class="index">

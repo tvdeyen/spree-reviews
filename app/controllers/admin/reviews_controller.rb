@@ -1,9 +1,9 @@
 class Admin::ReviewsController < Admin::ResourceController
   
   def index
-    @unapproved_reviews = Review.not_approved.find(:all, :order => "created_at DESC")
-    @approved_reviews   = Review.approved.find(:all, :order => "created_at DESC")
-    respond_with do |format|
+    @unapproved_reviews = Review.not_approved.order("created_at DESC")
+    @approved_reviews   = Review.approved.order("created_at DESC")
+    respond_with(@unapproved_reviews, @approved_reviews) do |format|
       format.html
     end
   end
